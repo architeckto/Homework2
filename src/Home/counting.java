@@ -9,7 +9,7 @@ public class counting {
             }
 
         }
-        public static void calculation(String[][] car) trows MyArrayDataException {
+        public void calculation(String[][] car) throws MyArrayDataException {
             int box = 0;
             for (int i = 0; i < car.length; i++) {
                 for (int j = 0; j < car[0].length; j++) {
@@ -17,7 +17,7 @@ public class counting {
                         box += Integer.parseInt(car[i][j]);
                         System.out.println("Sum of the array: = " + box);
                     } catch (NumberFormatException ex) {
-                        System.out.println("NumberFormatException: " + ex.getMessage()+i+j);
+                        throw new MyArrayDataException("NumberFormatException: " + ex.getMessage()+i+j);
                     }
                 }
             }
